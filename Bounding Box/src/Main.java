@@ -1,33 +1,48 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter number of points: ");
-        int n = sc.nextInt();
-        ArrayList<Integer> x = new ArrayList<>(n);
-        ArrayList<Integer> y = new ArrayList<>(n);
-        ArrayList<Integer> z = new ArrayList<>(n);
-        for (int i = 0 ; i < n ; i++) {
-            System.out.println("Point " + i);
-            System.out.print("x = ");
-            int xOfPoint = sc.nextInt();
-            x.add(xOfPoint);
-            System.out.print("y = ");
-            int yOfPoint = sc.nextInt();
-            y.add(yOfPoint);
-            System.out.print("z = ");
-            int zOfPoint = sc.nextInt();
-            z.add(zOfPoint);
-        }
-        int xMin = DivideAndConquer.findMin(x, 0, n);
-        int yMin = DivideAndConquer.findMin(y, 0, n);
-        int zMin = DivideAndConquer.findMin(z, 0, n);
-        int xMax = DivideAndConquer.findMax(x, 0, n);
-        int yMax = DivideAndConquer.findMax(y, 0, n);
-        int zMax = DivideAndConquer.findMax(z, 0, n);
-        System.out.println("(" + xMin + ", " + yMin + ", " + zMin + ")");
-        System.out.print("(" + xMax + ", " + yMax + ", " + zMax + ")");
+    private int n = 0;
+    private ArrayList<Integer> x = new ArrayList<>();
+    private ArrayList<Integer> y = new ArrayList<>();
+    private ArrayList<Integer> z = new ArrayList<>();
+
+    public void setN(int n) {
+        this.n = n;
+    }
+
+    public void setX(ArrayList<Integer> x) {
+        this.x = x;
+    }
+
+    public void setY(ArrayList<Integer> y) {
+        this.y = y;
+    }
+
+    public void setZ(ArrayList<Integer> z) {
+        this.z = z;
+    }
+
+    public int getMinX() {
+        return DivideAndConquer.findMin(x, 0, n);
+    }
+
+    public int getMaxX() {
+        return DivideAndConquer.findMax(x, 0, n);
+    }
+
+    public int getMinY() {
+        return DivideAndConquer.findMin(y, 0, n);
+    }
+
+    public int getMaxY(){
+        return DivideAndConquer.findMax(y, 0, n);
+    }
+
+    public int getMinZ() {
+        return DivideAndConquer.findMin(z, 0, n);
+    }
+
+    public int getMaxZ() {
+        return DivideAndConquer.findMax(z, 0, n);
     }
 }
